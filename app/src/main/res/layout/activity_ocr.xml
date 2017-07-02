@@ -31,14 +31,28 @@
                 android:layout_margin="5dp"
                 android:text="Image Upload" />
 
+            <ImageButton
+                android:id="@+id/ImageScan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Imageupload"
+                android:layout_margin="5dp"
+                android:layout_alignBaseline="@+id/ImageScan"
+                android:text="Image Scan" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/textRela"
 
-            android:layout_below="@+id/buttonLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonLayout">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/view"
@@ -53,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/searchView"
+                    android:layout_toLeftOf="@+id/productSearch"
                     android:hint="Search Here"
                     android:text="" />
             </android.support.design.widget.TextInputLayout>
@@ -62,11 +76,11 @@
         </RelativeLayout>
 
         <ImageButton
-            android:id="@+id/searchView"
+            android:id="@+id/productSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignBaseline="@+id/textRela"
+            android:layout_alignParentRight="true"
             android:src="@android:drawable/ic_search_category_default" />
 
 

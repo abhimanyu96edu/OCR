@@ -44,7 +44,7 @@ public class ImageToText extends AppCompatActivity implements IHODClientCallback
             if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
                 String realPath;
                 Uri selectedImageURI = data.getData();
-                realPath = (getRealPathFromURI(selectedImageURI));
+                realPath = getRealPathFromURI(selectedImageURI);
                 useHODClient(realPath);
 
             } else {

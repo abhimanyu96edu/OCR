@@ -9,10 +9,11 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class OCRActivity extends Activity {
 
-    ImageButton searchView, uploadImage;
+    ImageButton productSearch, uploadImage, imageScan;
     AutoCompleteTextView searchEditText;
 
     @Override
@@ -21,13 +22,18 @@ public class OCRActivity extends Activity {
         setContentView(R.layout.activity_ocr);
 
         searchEditText = (AutoCompleteTextView) findViewById(R.id.editText);
-        searchView = (ImageButton) findViewById(R.id.searchView);
 
-        searchView.setBackgroundColor(Color.TRANSPARENT);
-        searchView.setColorFilter(Color.parseColor("#FF4081"));
+        productSearch = (ImageButton) findViewById(R.id.productSearch);
+        productSearch.setBackgroundColor(Color.TRANSPARENT);
+        productSearch.setColorFilter(Color.parseColor("#FF4081"));
+
         uploadImage = (ImageButton) findViewById(R.id.Imageupload);
         uploadImage.setBackgroundColor(Color.TRANSPARENT);
         uploadImage.setColorFilter(Color.parseColor("#FF4081"));
+
+        imageScan = (ImageButton) findViewById(R.id.ImageScan);
+        imageScan.setBackgroundColor(Color.TRANSPARENT);
+        imageScan.setColorFilter(Color.parseColor("#FF4081"));
 
         uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +41,24 @@ public class OCRActivity extends Activity {
                 vibrate();
                 Intent intent = new Intent(OCRActivity.this, ImageToText.class);
                 startActivityForResult(intent, 2);
+            }
+        });
+
+        imageScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibrate();
+                Toast.makeText(OCRActivity.this, "Scan Image Module", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        productSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibrate();
+
+                Toast.makeText(OCRActivity.this,"Product Added to Cart",Toast.LENGTH_LONG).show();
+                searchEditText.setText("");
             }
         });
     }
